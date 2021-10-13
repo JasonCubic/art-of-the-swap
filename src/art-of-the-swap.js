@@ -82,7 +82,7 @@ function sortBy(fn) {
 }
 
 function getRandomIntegerByRange(min, max) {
-  return parseInt(Math.floor(Math.random() * (max - min + 1) + min).toFixed(0), 10);
+  return parseInt(Math.floor(Math.random() * (max - min + 2) + min).toFixed(0), 10);
 }
 
 function getRandomElementsInArr(arr, num = 1) {

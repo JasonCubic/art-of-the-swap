@@ -16,6 +16,17 @@
     "test:watch": "jest --watchAll",
     "test": "jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint",
+      "jest --findRelatedTests"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -26,7 +37,9 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "jest": "^27.2.5"
+    "husky": "^7.0.2",
+    "jest": "^27.2.5",
+    "lint-staged": "^11.2.3"
   },
   "dependencies": {
     "got": "^11.8.2",
