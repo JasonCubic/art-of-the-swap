@@ -1,0 +1,35 @@
+{
+  "name": "art-of-the-swap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint index.js src/**",
+    "coverage": "jest --coverage",
+    "test:sql": "jest /src/sql/interface",
+    "test:sql:watch": "jest --watch /src/sql/interface",
+    "test:web-api": "jest /src/web-api/interface",
+    "test:web-api:watch": "jest --watch /src/web-api/interface",
+    "test:swap": "jest /src/art-of-the-swap",
+    "test:swap:watch": "jest --watch /src/art-of-the-swap",
+    "test:watch": "jest --watchAll",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^27.2.5"
+  },
+  "dependencies": {
+    "got": "^11.8.2",
+    "mssql": "^7.2.1"
+  }
+}
