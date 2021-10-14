@@ -44,7 +44,7 @@ test('should lookup a token', async () => {
       reject(new Error(`incorrect url: ${ajaxConfig.url}`));
       return;
     }
-    if (ajaxConfig?.headers?.['X-Vault-Token'] !== tokenHeader) {
+    if (ajaxConfig?.headers?.['my-token'] !== tokenHeader) {
       reject(new Error('X-Vault-Token header not set'));
       return;
     }

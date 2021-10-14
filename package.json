@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "start": "node .",
     "lint": "eslint index.js src/**",
@@ -28,9 +31,10 @@
       "jest --findRelatedTests"
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "got": "^11.8.2",
+    "mssql": "^7.2.1"
+  },
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -41,9 +45,5 @@
     "husky": "^7.0.0",
     "jest": "^27.2.5",
     "lint-staged": "^11.2.3"
-  },
-  "dependencies": {
-    "got": "^11.8.2",
-    "mssql": "^7.2.1"
   }
 }

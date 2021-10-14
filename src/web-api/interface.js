@@ -5,7 +5,7 @@ async function lookupToken(tokenHeader) {
     url: 'http://127.0.0.1:8200/v0.1/auth/token/lookup-self',
     method: 'GET',
     headers: {
-      'X-Vault-Token': tokenHeader,
+      'my-token': tokenHeader,
     },
     responseType: 'json',
   });
