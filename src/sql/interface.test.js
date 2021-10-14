@@ -67,13 +67,42 @@ test('should delete employee', async () => {
   expect(mockQuery).toHaveBeenCalledWith('DELETE FROM [DunderMifflin].[dbo].[scranton] WHERE [NAME] = @NAME');
 });
 
-test('should throw an error on invalid name provided', async () => {
-  await expect(createOfficeEmployee(false)).rejects.toThrow('invalid name');
+test('should throw an error on invalid name provided to createOfficeEmployee', async () => {
+  await expect(createOfficeEmployee()).rejects.toThrow('invalid name');
+  await expect(createOfficeEmployee(null)).rejects.toThrow('invalid name');
+  await expect(createOfficeEmployee(123)).rejects.toThrow('invalid name');
+  await expect(createOfficeEmployee({ name: 'name' })).rejects.toThrow('invalid name');
+  await expect(createOfficeEmployee('')).rejects.toThrow('invalid name');
+});
+
+test('should throw an error on invalid name provided to updateOfficeEmployee', async () => {
+  await expect(updateOfficeEmployee()).rejects.toThrow('invalid name');
+  await expect(updateOfficeEmployee(null)).rejects.toThrow('invalid name');
   await expect(updateOfficeEmployee(123)).rejects.toThrow('invalid name');
+  await expect(updateOfficeEmployee({ name: 'name' })).rejects.toThrow('invalid name');
+  await expect(updateOfficeEmployee('')).rejects.toThrow('invalid name');
+});
+
+test('should throw an error on invalid name provided to deleteOfficeEmployee', async () => {
+  await expect(deleteOfficeEmployee()).rejects.toThrow('invalid name');
+  await expect(deleteOfficeEmployee(null)).rejects.toThrow('invalid name');
+  await expect(deleteOfficeEmployee(123)).rejects.toThrow('invalid name');
+  await expect(deleteOfficeEmployee({ name: 'name' })).rejects.toThrow('invalid name');
   await expect(deleteOfficeEmployee('')).rejects.toThrow('invalid name');
 });
 
-test('should throw an error on invalid title provided', async () => {
+test('should throw an error on invalid title provided to createOfficeEmployee', async () => {
+  await expect(createOfficeEmployee('jim')).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('jim', null)).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('jim', 123)).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('jim', { title: 'title' })).rejects.toThrow('invalid title');
   await expect(createOfficeEmployee('jim', '')).rejects.toThrow('invalid title');
-  await expect(updateOfficeEmployee('pam', 1)).rejects.toThrow('invalid title');
+});
+
+test('should throw an error on invalid title provided to updateOfficeEmployee', async () => {
+  await expect(createOfficeEmployee('pam')).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('pam', null)).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('pam', 123)).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('pam', { title: 'title' })).rejects.toThrow('invalid title');
+  await expect(createOfficeEmployee('pam', '')).rejects.toThrow('invalid title');
 });
