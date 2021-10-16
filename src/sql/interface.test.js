@@ -26,7 +26,7 @@ beforeEach(() => {
 });
 
 test('should create employee', async () => {
-  const name = 'steve';
+  const name = 'michael';
   const title = 'Regional Manager';
   await createOfficeEmployee(name, title);
   expect(mockRequest).toHaveBeenCalled();

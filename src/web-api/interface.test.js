@@ -40,11 +40,11 @@ test('should lookup a token', async () => {
       reject(new Error(`incorrect method: ${ajaxConfig.method}`));
       return;
     }
-    if (ajaxConfig?.url !== 'http://127.0.0.1:8200/v0.1/auth/token/lookup-self') {
+    if (ajaxConfig.url !== 'http://127.0.0.1:8200/v0.1/auth/token/lookup-self') {
       reject(new Error(`incorrect url: ${ajaxConfig.url}`));
       return;
     }
-    if (ajaxConfig?.headers?.['my-token'] !== tokenHeader) {
+    if (ajaxConfig.headers?.['my-token'] !== tokenHeader) {
       reject(new Error('X-Vault-Token header not set'));
       return;
     }
